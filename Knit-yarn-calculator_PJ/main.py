@@ -1,0 +1,18 @@
+import math
+print("[대체실 소요량 계산기]",end="\n")
+print("[원작 기본 정보]")
+size=input("사이즈: ")
+og=int(input("원작실 소요량(g): "))
+owh=int(input("원작실 1볼/콘 무게(g): "))
+olh=int(input("원작실 1볼/콘 길이(m): "))
+opls=int(input("원작실 합 수(합): "))
+print("[대체실 정보]")
+rwh=int(input("대체실 1볼/콘 무게(g): "))
+rlh=int(input("대체실 1볼/콘 길이(m): "))
+rpls=int(input("대체실 합 수(합): "))
+print("[계산 중..]")
+lth=og/owh*(olh/opls)
+weh=lth/(rlh/rpls)*rwh
+print(f"원작실 총 필요 길이: 약 {lth}m\n대체실 예상 필요 무게: 약 {weh}g\n")
+balls=math.ceil(weh/rwh)
+print(f"대체실 예상 필요 볼/콘 수: {balls}볼/콘")
